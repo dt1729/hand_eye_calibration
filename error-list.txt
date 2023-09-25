@@ -33,3 +33,48 @@ on line 98 in time_alignment.py
 samples = np.linspace(times[0], times[-1], int(interval / dt) + 1)
 
 -------------------
+
+
+/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/dual_quaternion.py:39: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  return "[q_rot: {}, q_dual: {}]".format(np.str(self.q_rot), np.str(self.q_dual))
+Traceback (most recent call last):
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/bin/compute_hand_eye_calibration.py", line 142, in <module>
+    runtime, singular_values, bad_singular_values) = compute_hand_eye_calibration_RANSAC(
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/dual_quaternion_hand_eye_calibration.py", line 879, in compute_hand_eye_calibration_RANSAC
+    print("Found a new best sample: {}\n"
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/dual_quaternion.py", line 39, in __str__
+    return "[q_rot: {}, q_dual: {}]".format(np.str(self.q_rot), np.str(self.q_dual))
+  File "/home/dt/.local/lib/python3.8/site-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'str'.
+`np.str` was a deprecated alias for the builtin `str`. To avoid this error in existing code, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+
+in line 39 of dual_quaternion.py replaced np.str with str
+
+------------------
+
+
+/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/quaternion.py:29: FutureWarning: In the future `np.str` will be defined as the corresponding NumPy scalar.
+  return np.str(self.q)
+Traceback (most recent call last):
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/bin/compute_hand_eye_calibration.py", line 142, in <module>
+    runtime, singular_values, bad_singular_values) = compute_hand_eye_calibration_RANSAC(
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/dual_quaternion_hand_eye_calibration.py", line 879, in compute_hand_eye_calibration_RANSAC
+    print("Found a new best sample: {}\n"
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/dual_quaternion.py", line 39, in __str__
+    return "[q_rot: {}, q_dual: {}]".format(str(self.q_rot), str(self.q_dual))
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/quaternion.py", line 29, in __str__
+    return np.str(self.q)
+  File "/home/dt/.local/lib/python3.8/site-packages/numpy/__init__.py", line 305, in __getattr__
+    raise AttributeError(__former_attrs__[attr])
+AttributeError: module 'numpy' has no attribute 'str'.
+`np.str` was a deprecated alias for the builtin `str`. To avoid this error in existing code, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+in line 29 of quaternion.py replaced np.str with str
+
+------------------

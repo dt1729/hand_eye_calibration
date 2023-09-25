@@ -26,7 +26,7 @@ class Quaternion(object):
       assert False
 
   def __str__(self):
-    return np.str(self.q)
+    return str(self.q)
 
   def __repr__(self):
     return "<Quaternion x:{} y:{} z:{} w:{}>".format(self.x, self.y, self.z, self.w)
