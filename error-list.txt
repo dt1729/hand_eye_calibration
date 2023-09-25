@@ -1,11 +1,20 @@
+-------------------
 fatal error: libv4l2.h: No such file or directory
    54 | #include <libv4l2.h>
 
 sudo apt-get install libv4l-dev
 
-
+-------------------
 
 /home/dt/HRIPapers/hand_eye_ws/src/aslam_cv2/aslam_cv_common/include/aslam/common/internal/unique-id.h:7:10: fatal error: aslam/common/id.pb.h: No such file or directory
     7 | #include "aslam/common/id.pb.h"
 
 https://github.com/ethz-asl/aslam_cv2/issues/52#issuecomment-706067723
+
+-------------------
+
+segfault due to reading from uninitialised error
+
+https://github.com/ardiya/hand_eye_calibration/commit/41ae4a94b0df587e1b530da0e572a857d0290b35
+
+-------------------

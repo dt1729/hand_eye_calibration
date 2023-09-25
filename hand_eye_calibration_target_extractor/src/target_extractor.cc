@@ -1,8 +1,10 @@
 #include <fstream>
 #include <limits>
+#include <iostream>
 
 #include <aslam/calibration/target-aprilgrid.h>
 #include <aslam/cameras/camera.h>
+#include <aslam/cameras/camera-pinhole.h>
 #include <aslam/common/pose-types.h>
 #include <aslam/geometric-vision/pnp-pose-estimator.h>
 #include <glog/logging.h>
@@ -232,8 +234,9 @@ int main(int argc, char** argv) {
       }
     }
 
-    aslam::Camera::Ptr camera;
+    aslam::PinholeCamera::Ptr camera = std::make_shared<aslam::PinholeCamera>();
     camera->deserializeFromFile(FLAGS_eval_camera_yaml);
+    camera->printParameters(std::cout, "");
     CHECK(camera);
 
     constexpr bool kRunNonlinearRefinement = true;
