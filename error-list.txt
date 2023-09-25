@@ -18,3 +18,18 @@ segfault due to reading from uninitialised error
 https://github.com/ardiya/hand_eye_calibration/commit/41ae4a94b0df587e1b530da0e572a857d0290b35
 
 -------------------
+
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/time_alignment.py", line 146, in calculate_time_offset
+    (quaternions_A_interp, samples_A) = resample_quaternions(times_A,
+  File "/home/dt/HRIPapers/hand_eye_ws/src/hand_eye_calibration/hand_eye_calibration/python/hand_eye_calibration/time_alignment.py", line 98, in resample_quaternions
+    samples = np.linspace(times[0], times[-1], interval / dt + 1)
+  File "<__array_function__ internals>", line 200, in linspace
+  File "/home/dt/.local/lib/python3.8/site-packages/numpy/core/function_base.py", line 121, in linspace
+    num = operator.index(num)
+TypeError: 'numpy.float64' object cannot be interpreted as an integer
+
+
+on line 58 in time_alignment.py
+samples = np.linspace(times[0], times[-1], int(interval / dt) + 1)
+
+-------------------
