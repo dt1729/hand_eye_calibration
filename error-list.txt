@@ -29,7 +29,7 @@ https://github.com/ardiya/hand_eye_calibration/commit/41ae4a94b0df587e1b530da0e5
 TypeError: 'numpy.float64' object cannot be interpreted as an integer
 
 
-on line 58 in time_alignment.py
+on line 98 in time_alignment.py
 samples = np.linspace(times[0], times[-1], int(interval / dt) + 1)
 
 -------------------
